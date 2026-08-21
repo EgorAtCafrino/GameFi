@@ -1,0 +1,312 @@
+.cf-deploy-page {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cf-deploy-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 102, 255, 0.28);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(124, 58, 237, 0.22), transparent 40%),
+    linear-gradient(145deg, #111827, #0b1220);
+}
+
+.cf-deploy-hero h1 {
+  margin: 0 0 0.65rem;
+  font-family: Rubik-B, sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+}
+
+.cf-deploy-hero p {
+  margin: 0 0 1.2rem;
+  color: var(--sg-text-muted);
+  font-family: WorkSans-R, sans-serif;
+  max-width: 460px;
+  line-height: 1.55;
+}
+
+.cf-chain-orbit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.cf-chain-pill {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.78rem;
+  font-family: WorkSans-M, sans-serif;
+}
+
+.cf-stepper {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.cf-step {
+  padding: 0.65rem 0.55rem;
+  border-radius: 12px;
+  border: 1px solid var(--sg-border);
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+}
+
+.cf-step.active {
+  border-color: rgba(0, 102, 255, 0.5);
+  background: rgba(0, 102, 255, 0.16);
+}
+
+.cf-step span {
+  display: block;
+  color: var(--sg-text-muted);
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-step strong {
+  font-size: 0.8rem;
+  font-family: WorkSans-S, sans-serif;
+}
+
+.cf-deploy-preview {
+  border-radius: 16px;
+  min-height: 220px;
+  border: 1px solid var(--sg-border);
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55)),
+    url("/images/galaxy/web3-deployment-preview.png") center/cover;
+  display: flex;
+  align-items: end;
+  padding: 1rem;
+}
+
+.cf-deploy-preview-meta {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: rgba(10, 13, 20, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-deploy-preview-meta span {
+  color: var(--sg-text-muted);
+}
+
+.cf-deploy-preview-meta strong {
+  color: var(--white);
+  font-family: WorkSans-S, sans-serif;
+}
+
+.cf-deploy-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 1rem;
+}
+
+.cf-form-card,
+.cf-side-card {
+  background: var(--sg-surface);
+  border: 1px solid var(--sg-border);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+.cf-form-card h3,
+.cf-side-card h3 {
+  margin: 0 0 1rem;
+  font-family: WorkSans-S, sans-serif;
+  font-size: 1rem;
+}
+
+.cf-field {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.95rem;
+}
+
+.cf-field label {
+  font-size: 0.78rem;
+  color: var(--sg-text-muted);
+  font-family: WorkSans-M, sans-serif;
+}
+
+.cf-field input,
+.cf-field textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--sg-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--white);
+  padding: 0.75rem 0.9rem;
+  font-family: WorkSans-R, sans-serif;
+  font-size: 0.9rem;
+}
+
+.cf-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.cf-network-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.cf-network-card {
+  all: unset;
+  cursor: pointer;
+  padding: 0.85rem 0.7rem;
+  border-radius: 12px;
+  border: 1px solid var(--sg-border);
+  background: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  font-family: WorkSans-M, sans-serif;
+  font-size: 0.82rem;
+  color: var(--dark-white);
+}
+
+.cf-network-card.selected {
+  border-color: rgba(0, 102, 255, 0.55);
+  background: rgba(0, 102, 255, 0.16);
+  color: white;
+  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.2);
+}
+
+.cf-guide-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.cf-guide-list li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0.65rem;
+  align-items: start;
+  font-size: 0.84rem;
+  color: var(--dark-white);
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-guide-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 102, 255, 0.18);
+  color: #7eb6ff;
+  font-family: WorkSans-S, sans-serif;
+  font-size: 0.78rem;
+}
+
+.cf-help-links {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.cf-help-links a {
+  color: #7eb6ff;
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-family: WorkSans-M, sans-serif;
+}
+
+.cf-network-status {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.cf-network-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--sg-border);
+  font-size: 0.8rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-online {
+  color: #4ade80;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cf-online::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.cf-history {
+  background: var(--sg-surface);
+  border: 1px solid var(--sg-border);
+  border-radius: 16px;
+  padding: 1.15rem;
+  overflow-x: auto;
+}
+
+.cf-history h3 {
+  margin: 0 0 1rem;
+  font-family: WorkSans-S, sans-serif;
+}
+
+.cf-status.live {
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.cf-status.pending {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.cf-status.failed {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+@media (max-width: 1100px) {
+  .cf-deploy-hero,
+  .cf-deploy-grid,
+  .cf-network-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cf-stepper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .cf-deploy-hero,
+  .cf-deploy-grid,
+  .cf-network-grid,
+  .cf-stepper {
+    grid-template-columns: 1fr;
+  }
+}
