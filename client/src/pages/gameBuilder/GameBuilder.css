@@ -1,0 +1,320 @@
+.cf-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cf-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 102, 255, 0.25);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(0, 102, 255, 0.22), transparent 40%),
+    linear-gradient(135deg, #121826 0%, #0d1424 100%);
+  overflow: hidden;
+}
+
+.cf-hero h1 {
+  margin: 0 0 0.75rem;
+  font-family: Rubik-B, sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.cf-hero h1 span {
+  color: #4ea1ff;
+}
+
+.cf-hero p {
+  margin: 0 0 1.4rem;
+  max-width: 460px;
+  color: var(--sg-text-muted);
+  font-family: WorkSans-R, sans-serif;
+  line-height: 1.6;
+}
+
+.cf-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cf-btn-primary,
+.cf-btn-ghost,
+.cf-btn-soft {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: 12px;
+  font-family: WorkSans-S, sans-serif;
+  font-size: 0.88rem;
+  transition: 0.2s ease;
+}
+
+.cf-btn-primary {
+  background: #0066ff;
+  color: white;
+  box-shadow: 0 10px 28px rgba(0, 102, 255, 0.35);
+}
+
+.cf-btn-primary:hover {
+  transform: translateY(-1px);
+  background: #1a75ff;
+}
+
+.cf-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cf-btn-soft {
+  background: rgba(0, 102, 255, 0.14);
+  color: #7eb6ff;
+  border: 1px solid rgba(0, 102, 255, 0.28);
+}
+
+.cf-hero-visual {
+  position: relative;
+  min-height: 220px;
+  border-radius: 16px;
+  background:
+    linear-gradient(160deg, rgba(0, 102, 255, 0.18), transparent 50%),
+    url("/images/galaxy/analytics-dashboard-preview.png") center/cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cf-hero-visual::after {
+  content: "Deploy to Blockchain";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  background: rgba(10, 13, 20, 0.88);
+  border: 1px solid rgba(0, 102, 255, 0.4);
+  font-size: 0.75rem;
+  font-family: WorkSans-M, sans-serif;
+  color: #9ec5ff;
+}
+
+.cf-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cf-section-head h2 {
+  margin: 0;
+  font-family: Rubik-B, sans-serif;
+  font-size: 1.25rem;
+}
+
+.cf-section-head p {
+  margin: 0.35rem 0 0;
+  color: var(--sg-text-muted);
+  font-size: 0.88rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-template-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cf-template-card {
+  background: var(--sg-surface);
+  border: 1px solid var(--sg-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.22s ease;
+}
+
+.cf-template-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 102, 255, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+
+.cf-template-thumb {
+  height: 140px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.25), transparent 55%),
+    #141a2a;
+}
+
+.cf-template-body {
+  padding: 1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.cf-template-body h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-family: WorkSans-S, sans-serif;
+}
+
+.cf-template-body p {
+  margin: 0;
+  min-height: 2.4em;
+  color: var(--sg-text-muted);
+  font-size: 0.8rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-badge {
+  justify-self: start;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-family: WorkSans-M, sans-serif;
+}
+
+.cf-badge.popular {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.cf-badge.hot {
+  color: #fb7185;
+  background: rgba(244, 63, 94, 0.15);
+}
+
+.cf-badge.battle {
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.15);
+}
+
+.cf-badge.card {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.cf-template-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.cf-template-actions .cf-btn-primary,
+.cf-template-actions .cf-btn-ghost {
+  padding: 0.55rem 0.6rem;
+  font-size: 0.78rem;
+}
+
+.cf-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+}
+
+.cf-panel {
+  background: var(--sg-surface);
+  border: 1px solid var(--sg-border);
+  border-radius: 16px;
+  padding: 1.15rem;
+}
+
+.cf-panel h3 {
+  margin: 0 0 1rem;
+  font-family: WorkSans-S, sans-serif;
+  font-size: 1rem;
+}
+
+.cf-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cf-table th,
+.cf-table td {
+  text-align: left;
+  padding: 0.75rem 0.4rem;
+  border-bottom: 1px solid var(--sg-border);
+  font-size: 0.84rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+.cf-table th {
+  color: var(--sg-text-muted);
+  font-family: WorkSans-M, sans-serif;
+  font-weight: 500;
+}
+
+.cf-status {
+  display: inline-flex;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-family: WorkSans-M, sans-serif;
+}
+
+.cf-status.draft {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.cf-status.published {
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.cf-asset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cf-asset-card {
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--sg-border);
+  background: rgba(255, 255, 255, 0.03);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.cf-asset-card strong {
+  font-family: WorkSans-S, sans-serif;
+  font-size: 0.88rem;
+}
+
+.cf-asset-card span {
+  color: var(--sg-text-muted);
+  font-size: 0.75rem;
+  font-family: WorkSans-R, sans-serif;
+}
+
+@media (max-width: 1100px) {
+  .cf-hero,
+  .cf-split,
+  .cf-template-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .cf-hero,
+  .cf-split,
+  .cf-template-grid,
+  .cf-asset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cf-hero-visual {
+    min-height: 180px;
+  }
+}
