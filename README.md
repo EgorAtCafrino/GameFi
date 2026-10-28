@@ -1,71 +1,37 @@
-﻿# Cafrino
+﻿# Avax Gods - Online Multiplayer Web3 NFT Card Game
+![Gameplay](./ad.jpg)
 
+## Run the client-only demo
 
-**Decentralized Web3 Gaming Infrastructure** — a next-generation blockchain platform focused on empowering developers to build scalable, secure, and innovative decentralized gaming applications.
-
-![GameFi platform](./client/public/images/galaxy/main.png)
-
----
-
-## How it works
-
-Cafrino simplifies Web3 game creation through one seamless workflow:
-
-**Choose  → Build  → Launch  → Grow**
-
-1. **Choose** — Start with ready-to-use game templates or create a custom gaming experience.
-2. **Build** — Customize game features, design, and functionality through an intuitive, no-code interface.
-3. **Launch** — Publish your game using integrated Web3 infrastructure and blockchain connectivity.
-4. **Grow** — Manage your games, track performance, and expand your audience through a unified dashboard.
-
-Architecture today: React + Vite frontend with an Express API. Demo mode uses mock data — **MongoDB is optional**.
-
----
-
-| Game Builder | Web3 Deployment | Analytics Dashboard |
-|:-----:|:--------------:|:-----------------:|
-| ![Game Builder](./client/public/images/galaxy/game-builder-preview.png) | ![Web3 Deployment](./client/public/images/galaxy/web3-deployment-preview.png) | ![Analytics Dashboard](./client/public/images/galaxy/analytics-dashboard-preview.png) |
-
----
-
-## Requirements
-
-- **Node.js 18+** ([nodejs.org](https://nodejs.org/))
-- npm (comes with Node)
-
----
-
-## Getting started
+The client now includes a local demo mode that does not require a wallet or deployed smart contract. It pairs the player with an arena opponent and saves demo progress in the browser.
 
 ```bash
-# 1. Install Backend dependencies
 npm install
-
-# 2. Install Frontend dependencies
 cd client
 npm install
+npm run build
 cd ..
-
-# 3. Launch Project
 npm start
 ```
 
-Then open: **http://127.0.0.1:5173/**
+To start with a fresh demo profile, clear this site's local storage in your browser.
 
-| Service  | URL |
-|----------|-----|
-| Frontend | http://127.0.0.1:5173/ |
-| API      | http://127.0.0.1:9030/ |
+### Launch your development career with project-based coaching on [JS Mastery Pro](https://www.jsmastery.pro).
 
----
-
-## Stack
-
-| Layer | Tech |
-|-------|------|
-| Frontend | React 18, Vite, React Router, Bootstrap 5 |
-| Backend | Node.js, Express |
-
----
-
-Copyright © 2025 GameFi
+## Instructions on setting up the Web3 part of the project
+0. `cd web3`
+1. `npx hardhat` -> y → typescript → enter → enter
+2. `npm install @openzeppelin/contracts dotenv @nomiclabs/hardhat-ethers` + Hardhat packages `npm install --save-dev "hardhat@^2.12.0" "@nomicfoundation/hardhat-toolbox@^2.0.0"`
+3. Install [Core](https://chrome.google.com/webstore/detail/core/agoakfejjabomempkjlepdflaleeobhb), a Metamask smart wallet alternative built for Avalanche dApps
+  1. Turn on the testnet mode by: opening up the Core extension -> click the hamburger menu on the top left -> go to advanced -> turn on the testnet mode
+4. Fund your wallet from the [Avax Faucet](https://faucet.avax.network/)
+5. Create a `.env` file and specify a PRIVATE_KEY variable.
+6. To get to the private key, do the following steps:
+  1. Open up the Core extension -> click the hamburger menu on the top left -> go to security and privacy -> click show recovery phase -> enter your password -> copy the phrase -> go to [wallet.avax.network](https://wallet.avax.network/) -> click access wallet -> choose mnemonic key phrase -> paste what the words we’ve copied from Core -> on the sidebar click manage keys -> view c-chain private key -> copy -> paste it in the .env file
+7. Copy the `hardhat.config.ts` file from the GitHub gist down in the description
+8. Copy the `deploy.ts` script from the GitHub gist down in the description
+9. Copy the `AvaxGods.sol` smart contract code from the GitHub gist down in the description
+10. Compile the contract by running the `npx hardhat compile` command
+11. Deploy the smart contract on the Fuji test network by running the `npx hardhat run scripts/deploy.ts --network fuji` command
+  Move the `/artifacts/contracts/AVAXGods.json` file to the `/contract` folder on the frontend
+  Copy the address of the deployed contract from the terminal and paste it into the `/contract/index.js` file of the frontend application

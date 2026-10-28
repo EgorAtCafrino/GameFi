@@ -3,31 +3,45 @@ const express = require('express');
 const config = require('./config');
 const configureMiddleware = require('./middleware');
 const configureRoutes = require('./routes');
+const configureClient = require('./middleware/client');
+const connectUser = require('./controllers/users').connectUser;
 const errorHandler = require('./middleware/errorHandler');
-const connectDB = require('./config/db');
+const bodyParser = require("body-parser");
 
 const app = express();
 
 configureMiddleware(app);
+
 configureRoutes(app);
+
+configureClient(app);
+
 app.use(errorHandler);
 
-const HOST = process.env.HOST || '127.0.0.1';
-const PORT = Number(config.PORT) || 9030;
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-const server = app.listen(PORT, HOST, () => {
-  connectDB();
-  console.log(`🚀 Server running on http://${HOST}:${PORT} (${config.NODE_ENV})`);
+const server = app.listen(config.PORT, '127.0.0.1', () => {
+  console.log(
+    `GameFi is running in ${config.NODE_ENV} mode at http://127.0.0.1:${config.PORT}`
+  );
+  connectUser();
 });
 
 const gracefulShutdown = (signal) => {
-  console.log(`\n${signal} received. Shutting down...`);
-  server.close(() => process.exit(0));
-  setTimeout(() => process.exit(1), 10000);
+  
+  server.close(() => {
+    console.log('HTTP server closed');
+    process.exit(0);
+  });
+
+  setTimeout(() => {
+    process.exit(1);
+  }, 10000);
 };
 
 process.on('unhandledRejection', (err) => {
-  console.error('Unhandled Promise Rejection:', err);
   gracefulShutdown('UNHANDLED_REJECTION');
 });
 

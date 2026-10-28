@@ -1,4 +1,6 @@
-**/node_modules
+﻿node_modules/
+.env
 local.env
 production.env
-package-lock.json
+*.pem
+credentials.json
